@@ -9,7 +9,7 @@
 ## Project Overview
 This repository contains the experiments conducted for Assignment 1. The objective was to train Deep Learning models (ResNet-18, ResNet-50) and Machine Learning classifiers (SVM) on the MNIST and FashionMNIST datasets. The project analyzes the impact of batch sizes, optimizers, learning rates, and hardware acceleration (CPU vs. GPU).
 
-**Colab Notebook:** 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gq3gNBHTEtcuLXLccexngcWtIBCqWmqI?usp=sharing)
 
 ---
 
