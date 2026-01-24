@@ -44,6 +44,16 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 *   **ResNet-18 vs ResNet-50:** ResNet-18 consistently outperformed ResNet-50 on these datasets. The deeper architecture of ResNet-50 is likely overkill for 28x28 grayscale images and harder to train without pre-trained weights.
 *   **Optimizers:** Adam generally converged faster than SGD, particularly at lower learning rates.
 
+### Hyperparameter Analysis: Pin Memory & Epochs
+**Settings:** FashionMNIST | ResNet-18 | Batch: 32 | Opt: Adam | LR: 0.001
+
+| Pin Memory | Epochs | Accuracy (%) | Training Time (ms) |
+| :--- | :--- | :--- | :--- |
+| False | 2 | 87.93% | 55,680 |
+| False | 4 | 92.30% | 107,757 |
+| True | 2 | 91.26% | 55,113 |
+| True | 4 | 92.56% | 110,137 |
+
 ---
 
 ## Q1(b). SVM Classification
