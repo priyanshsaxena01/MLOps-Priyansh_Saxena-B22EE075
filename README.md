@@ -40,10 +40,6 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 | 32 | SGD | 0.001 | 90.46% | 88.33% |
 | 32 | Adam | 0.0001 | 91.24% | 88.78% |
 
-### Analysis Summary
-*   **ResNet-18 vs ResNet-50:** ResNet-18 consistently outperformed ResNet-50 on these datasets. The deeper architecture of ResNet-50 is likely overkill for 28x28 grayscale images and harder to train without pre-trained weights.
-*   **Optimizers:** Adam generally converged faster than SGD, particularly at lower learning rates.
-
 ### Hyperparameter Analysis: Pin Memory & Epochs
 **Settings:** FashionMNIST | ResNet-18 | Batch: 32 | Opt: Adam | LR: 0.001
 
@@ -53,6 +49,12 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 | False | 4 | 92.30% | 107,757 |
 | True | 2 | 91.26% | 55,113 |
 | True | 4 | 92.56% | 110,137 |
+
+
+### Analysis Summary
+*   **ResNet-18 vs ResNet-50:** ResNet-18 consistently outperformed ResNet-50 on these datasets. The deeper architecture of ResNet-50 is likely overkill for 28x28 grayscale images and harder to train without pre-trained weights.
+*   **Optimizers:** Adam generally converged faster than SGD, particularly at lower learning rates.
+*   **Pin Memory:** Enabling pin memory facilitates faster data transfer to the GPU, though the impact is minor on this specific dataset size.
 
 ---
 
