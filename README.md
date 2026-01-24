@@ -2,7 +2,6 @@
 
 ## DLOPs Assignment 1
 **Deadline:** 24/01/2026  
-**Subject:** Deep Learning Operations (DLOPs)  
 **Student:** Priyansh Saxena - B22EE075
 
 ---
