@@ -17,6 +17,7 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 **Task:** Train ResNet-18 and ResNet-50 (scratch) on MNIST and FashionMNIST with a 70-10-20 split.
 
 ### Results Table: MNIST Dataset
+
 | Batch Size | Optimizers | Learning Rate | ResNet-18 Acc (%) | ResNet-50 Acc (%) |
 | :--- | :--- | :--- | :--- | :--- |
 | 16 | SGD | 0.001 | **99.03%** | 98.73% |
@@ -25,6 +26,7 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 | 16 | Adam | 0.0001 | 98.96% | 98.86% |
 
 ### Results Table: FashionMNIST Dataset
+
 | Batch Size | Optimizers | Learning Rate | ResNet-18 Acc (%) | ResNet-50 Acc (%) |
 | :--- | :--- | :--- | :--- | :--- |
 | 16 | SGD | 0.001 | 90.96% | 90.44% |
