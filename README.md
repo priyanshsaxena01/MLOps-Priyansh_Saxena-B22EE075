@@ -16,23 +16,29 @@ This repository contains the experiments conducted for Assignment 1. The objecti
 ## Q1(a). Deep Learning Model Training
 **Task:** Train ResNet-18 and ResNet-50 (scratch) on MNIST and FashionMNIST with a 70-10-20 split.
 
-### Results Table: MNIST Dataset
+### Q1(a). Experimental Results
 
-| Batch Size | Optimizers | Learning Rate | ResNet-18 Acc (%) | ResNet-50 Acc (%) |
+#### MNIST Dataset
+
+| Batch Size | Optimizers | Learning Rate | ResNet-18 Accuracy | ResNet-50 Accuracy |
 | :--- | :--- | :--- | :--- | :--- |
-| 16 | SGD | 0.001 | **99.03%** | 98.73% |
+| 16 | SGD | 0.001 | 99.03% | 98.73% |
 | 16 | SGD | 0.0001 | 97.50% | 96.41% |
 | 16 | Adam | 0.001 | 98.71% | 97.94% |
 | 16 | Adam | 0.0001 | 98.96% | 98.86% |
+| 32 | SGD | 0.001 | 98.76% | 98.70% |
+| 32 | Adam | 0.0001 | 98.79% | 97.55% |
 
-### Results Table: FashionMNIST Dataset
+#### FashionMNIST Dataset
 
-| Batch Size | Optimizers | Learning Rate | ResNet-18 Acc (%) | ResNet-50 Acc (%) |
+| Batch Size | Optimizers | Learning Rate | ResNet-18 Accuracy | ResNet-50 Accuracy |
 | :--- | :--- | :--- | :--- | :--- |
 | 16 | SGD | 0.001 | 90.96% | 90.44% |
 | 16 | SGD | 0.0001 | 86.64% | 80.25% |
 | 16 | Adam | 0.001 | 91.78% | 89.21% |
-| 16 | Adam | 0.0001 | **91.81%** | 89.60% |
+| 16 | Adam | 0.0001 | 91.81% | 89.60% |
+| 32 | SGD | 0.001 | 90.46% | 88.33% |
+| 32 | Adam | 0.0001 | 91.24% | 88.78% |
 
 ### Analysis Summary
 *   **ResNet-18 vs ResNet-50:** ResNet-18 consistently outperformed ResNet-50 on these datasets. The deeper architecture of ResNet-50 is likely overkill for 28x28 grayscale images and harder to train without pre-trained weights.
