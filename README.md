@@ -111,11 +111,12 @@ This lab successfully demonstrates an end-to-end CNN experimentation pipeline us
 
 ## 🔗 Links
 - **GitHub Repository:**  
-  https://github.com/priyanshsaxena01/MLOps-Priyansh_Saxena-B22EE075/tree/Priyansh-Saxena_B22EE075_lab2_worksheet
+  [Lab2-Worksheet Repository](https://github.com/priyanshsaxena01/MLOps-Priyansh_Saxena-B22EE075/tree/Priyansh-Saxena_B22EE075_lab2_worksheet)
 
 - **WandB Project:**  
-  https://wandb.ai/priyansh-saxena/cifar-10
+  [CIFAR-10 WandB Dashboard](https://wandb.ai/priyansh-saxena/cifar-10)
 
 - **Google Colab Notebook:**  
-  https://colab.research.google.com/drive/16TPwZpRBKbAFi1krRktoYLRM7im4iY3o?usp=sharing
+  [Run on Google Colab](https://colab.research.google.com/drive/16TPwZpRBKbAFi1krRktoYLRM7im4iY3o?usp=sharing)
+
 
