@@ -1,4 +1,4 @@
-# Lab 2 – CNN Analysis on CIFAR-10  
+# Lab 2 
 **Lab Worksheet – 31 Jan 2026**
 
 **Name:** Priyansh Saxena  
