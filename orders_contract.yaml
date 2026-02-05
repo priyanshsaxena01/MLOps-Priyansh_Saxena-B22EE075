@@ -1,0 +1,63 @@
+#
+# DATA CONTRACT: Flash Sale Orders
+#
+dataContractSpecification: 0.9.3
+id: urn:datacontract:ecommerce:flash-sale-orders
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "Real-Time Order Stream"
+  description: |
+    Stream of order events for Black Friday Marketing Dashboard.
+    Used to adjust ad spend dynamically.
+  owner: "Checkout Platform Team"
+  contact:
+    name: "Marketing Data Lead"
+    email: "marketing-eng@company.com"
+  classification: internal
+  tags: [ecommerce, black-friday, real-time]
+
+# 2. SCHEMA DEFINITION (Logical Contract)
+schema:
+  type: object
+  properties:
+    order_total_usd:
+      type: number
+      minimum: 0
+      description: "Total order value in USD."
+      pii: false
+      # physical_mapping: o_total
+    order_status:
+      type: string
+      enum: [PAID, SHIPPED, CANCELLED]
+      description: |
+        Logical status of the order.
+        Mapped from codes: 2=PAID, 5=SHIPPED, 9=CANCELLED.
+      pii: false
+      # physical_mapping: status_code
+  required:
+    - order_total_usd
+    - order_status
+
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+sla:
+  freshness:
+    threshold: "1 minute"
+    description: "Real-time feed for dashboard."
+
+# 4. DATA QUALITY RULES
+quality:
+  - name: total_non_negative
+    type: validity
+    expression: "order_total_usd >= 0"
+    threshold: "100%"
+    enforcement: hard
+    description: "Order total cannot be negative."
+
+  - name: valid_status_enum
+    type: validity
+    expression: "order_status IN ('PAID', 'SHIPPED', 'CANCELLED')"
+    threshold: "100%"
+    enforcement: hard
+    description: "Rejects unmapped status codes (e.g., code 7)."

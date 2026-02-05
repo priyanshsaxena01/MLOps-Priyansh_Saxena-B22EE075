@@ -1,0 +1,69 @@
+#
+# DATA CONTRACT: Smart Thermostat Telemetry
+#
+dataContractSpecification: 0.9.3
+id: urn:datacontract:iot:thermostat-readings
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "Thermostat Fleet Telemetry"
+  description: |
+    Minute-by-minute temperature and health data from 10,000 smart devices.
+    Used for "Average Home Temperature" reporting.
+  owner: "IoT Device Team"
+  contact:
+    name: "Device Ops"
+    email: "iot-ops@company.com"
+  classification: public
+  tags: [iot, temperature, sensor-data]
+
+# 2. SCHEMA DEFINITION (Logical Contract)
+schema:
+  type: object
+  properties:
+    device_id:
+      type: string
+      description: "Unique serial number of the thermostat."
+      pii: false
+      # physical_mapping: dev_id
+    temperature_celsius:
+      type: number
+      minimum: -30
+      maximum: 60
+      description: "Ambient temperature reading in Celsius."
+      pii: false
+      # physical_mapping: temp_c
+    battery_level_percentage:
+      type: number
+      minimum: 0.0
+      maximum: 1.0
+      description: "Battery health expressed as decimal (0.0 to 1.0)."
+      pii: false
+      # physical_mapping: batt_lvl
+  required:
+    - device_id
+    - temperature_celsius
+    - battery_level_percentage
+
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+sla:
+  freshness:
+    threshold: "5 minutes"
+    description: "Sensor data ingestion latency."
+
+# 4. DATA QUALITY RULES
+quality:
+  - name: temp_sane_range
+    type: validity
+    expression: "temperature_celsius >= -30 AND temperature_celsius <= 60"
+    threshold: "100%"
+    enforcement: soft
+    description: "Rejects sensor malfunctions (e.g. 9999) to protect mean calculations."
+
+  - name: battery_valid_range
+    type: validity
+    expression: "battery_level_percentage >= 0.0 AND battery_level_percentage <= 1.0"
+    threshold: "100%"
+    enforcement: soft
+    description: "Battery level must be a valid percentage decimal."

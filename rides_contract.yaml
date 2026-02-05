@@ -1,0 +1,111 @@
+#
+# DATA CONTRACT: CityMove Ride-Share Data
+#
+# NEGOTIATION SUMMARY
+#
+# Producer: Data Engineering Team (platform-data@citymove.com)
+# Consumer: Machine Learning Team (dynamic-pricing@citymove.com)
+#
+# Agreed Terms:
+# - Logical naming adopted to abstract underlying DB changes (preventing future crashes).
+# - Strict schema enforcement to protect the Pricing Algorithm.
+# - SLA: Data available within 30 mins of ride completion for hourly retraining.
+# - PII: Passenger IDs tagged and restricted.
+#
+dataContractSpecification: 0.9.3
+id: urn:datacontract:citymove:rides-log
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "Ride-Share Operational Logs"
+  description: |
+    Core operational data for completed rides.
+    Used by the Dynamic Pricing Algorithm for hourly model retraining.
+  owner: "Data Engineering Team"
+  contact:
+    name: "Lead Data Engineer"
+    email: "data-eng@citymove.com"
+    slack: "#data-ops"
+  classification: confidential
+  tags: [rides, pricing, ml-critical, pii]
+
+# 2. SCHEMA DEFINITION (Logical Contract)
+schema:
+  type: object
+  properties:
+    ride_id:
+      type: string
+      description: "Unique identifier for the ride transaction."
+      pii: false
+      # physical_mapping: r_id
+    pickup_timestamp:
+      type: string
+      format: date-time
+      description: "UTC timestamp when the passenger was picked up."
+      pii: false
+      # physical_mapping: ts_start
+    passenger_id:
+      type: integer
+      description: "Unique ID of the passenger. Contains PII."
+      pii: true
+      # physical_mapping: pax_id
+    driver_rating:
+      type: number
+      minimum: 1.0
+      maximum: 5.0
+      description: "Driver rating submitted by passenger (1.0 to 5.0)."
+      pii: false
+      # physical_mapping: d_rating
+    fare_amount_usd:
+      type: number
+      minimum: 0
+      description: "Final total fare charged in USD."
+      pii: false
+      # physical_mapping: fare_final
+    distance_meters:
+      type: integer
+      description: "Total distance traveled in meters."
+      pii: false
+      # physical_mapping: dist_m
+  required:
+    - ride_id
+    - pickup_timestamp
+    - passenger_id
+    - fare_amount_usd
+    - distance_meters
+
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+sla:
+  freshness:
+    threshold: "30 minutes"
+    description: "Data must be available 30 mins after ride completion for hourly training."
+  availability:
+    percentage: "99.9%"
+    description: "Critical path for pricing model."
+  retention:
+    period: "3 years"
+    description: "Historical data retained for model backtesting."
+
+# 4. DATA QUALITY RULES
+quality:
+  - name: fare_non_negative
+    type: validity
+    expression: "fare_amount_usd >= 0"
+    threshold: "100%"
+    enforcement: hard
+    description: "Fare must never be negative to prevent model crash."
+
+  - name: rating_range_valid
+    type: validity
+    expression: "driver_rating >= 1.0 AND driver_rating <= 5.0"
+    threshold: "100%"
+    enforcement: hard
+    description: "Rating must be between 1.0 and 5.0 inclusive."
+
+  - name: distance_not_null
+    type: completeness
+    column: distance_meters
+    threshold: "100%"
+    enforcement: hard
+    description: "Distance cannot be null."
