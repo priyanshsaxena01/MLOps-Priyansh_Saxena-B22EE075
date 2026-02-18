@@ -1,0 +1,12 @@
+FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY src/ ./src/
+
+# IMPORTANT: Set this to your specific HF Model ID
+ENV MODEL_ID="b22ee075/distilbert-goodreads-genre"
+
+# Run evaluation on startup
+CMD python src/eval.py --model_path $MODEL_ID
