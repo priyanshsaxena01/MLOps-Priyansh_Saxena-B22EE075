@@ -30,7 +30,7 @@ The model was evaluated on the test set after downloading the best weights from 
 
 ## 🔗 Project Links
 * **WandB Dashboard (Plots & Confusion Matrix):** [priyansh-saxena/mldlops-minor](https://wandb.ai/priyansh-saxena/mldlops-minor)
-* **Hugging Face Model Repo:** [priyansh-saxena/stl10-resnet18-minor](https://huggingface.co/priyansh-saxena/stl10-resnet18-minor)
+* **Hugging Face Model Repo:** [b22ee075/stl10-resnet18-minor](https://huggingface.co/b22ee075/stl10-resnet18-minor)
 
 ## 🛠️ How to Run
 
