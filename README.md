@@ -1,8 +1,11 @@
 # Assignment 4 — Optimizing Transformer Translation with Ray Tune & Optuna
 
 **Name:** Priyansh Saxena 
+
 **Roll No:** B22EE075 
+
 **Task:** English → Hindi Neural Machine Translation using a from-scratch PyTorch Transformer  
+
 **Goal:** Beat the baseline BLEU score (50.13) using ≤ 30 epochs via Ray Tune + Optuna + ASHA
 
 ---
