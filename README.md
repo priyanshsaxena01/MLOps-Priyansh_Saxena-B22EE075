@@ -27,7 +27,7 @@ The baseline BLEU of 50.13 was surpassed at **epoch 15** (BLEU = 70.45), saving 
 
 ```
 assignment-4/
-├── b22ee075_ass_4_tuned_en_to_hi_final.ipynb  ← Ray Tune implementation (main submission)
+├── b22ee075_ass_4_tuned_en_to_hi.ipynb  ← Ray Tune implementation (main submission)
 ├── en_to_hi_new.ipynb                          ← Baseline notebook (unchanged)
 ├── b22ee075_ass_4_best_model.pth               ← Best model weights (302 MB, see note below)
 ├── b22ee075_ass_4_report.pdf                   ← 2-page assignment report
