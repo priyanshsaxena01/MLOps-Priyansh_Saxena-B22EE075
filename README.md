@@ -38,7 +38,7 @@ assignment-4/
     └── hi_vocab.pkl                            ← Hindi vocabulary object
 ```
 
-> **Note:** `b22ee075_ass_4_best_model.pth` (302.6 MB) exceeds GitHub's 100 MB limit. It is hosted on HuggingFace Hub at [`b22ee075/en-hi-transformer`](https://huggingface.co/b22ee075/en-hi-transformer).
+> **Note:** `b22ee075_ass_4_best_model.pth` (302.6 MB) exceeds GitHub's 100 MB limit. It is hosted on HuggingFace Hub at [`b22ee075/en-hi-transformer-ass4`](https://huggingface.co/b22ee075/en-hi-transformer-ass4).
 
 ---
 
