@@ -29,11 +29,12 @@ The baseline BLEU of 50.13 was surpassed at **epoch 15** (BLEU = 70.45), saving 
 
 ```
 assignment-4/
-├── b22ee075_ass_4_tuned_en_to_hi.ipynb  ← Ray Tune implementation (main submission)
+├── b22ee075_ass_4_tuned_en_to_hi.ipynb         ← Ray Tune implementation (main submission)
 ├── en_to_hi_new.ipynb                          ← Baseline notebook (unchanged)
 ├── b22ee075_ass_4_best_model.pth               ← Best model weights (302 MB, see note below)
 ├── b22ee075_ass_4_report.pdf                   ← 2-page assignment report
 ├── README.md                                   ← This file
+├── b22ee075_ass_4_tuned_en_to_hi.py            ← Python file of the Ray Tune notebook
 └── best_model_artifacts/
     ├── best_config.json                        ← Serialised best hyperparameters
     ├── en_vocab.pkl                            ← English vocabulary object
