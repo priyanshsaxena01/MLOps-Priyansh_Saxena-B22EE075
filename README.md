@@ -8,6 +8,8 @@
 
 **Goal:** Beat the baseline BLEU score (50.13) using ≤ 30 epochs via Ray Tune + Optuna + ASHA
 
+**Model:** https://huggingface.co/b22ee075/en-hi-transformer-ass4
+
 ---
 
 ## Results at a Glance
