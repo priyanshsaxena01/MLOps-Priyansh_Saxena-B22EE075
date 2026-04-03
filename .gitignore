@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WandB
+wandb/
+
+# Optuna
+*.db
+
+# Temporary
+*.tmp
+*.log
+
+# Keep weight files that are explicitly committed
+# q1_vit_lora/weights/ - committed selectively
+# q2_adversarial/weights/ - not needed per spec

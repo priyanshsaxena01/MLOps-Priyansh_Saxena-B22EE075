@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  assignment5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: assignment5:latest
+    container_name: assignment5_container
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - WANDB_API_KEY=${WANDB_API_KEY}
+      - HF_TOKEN=${HF_TOKEN}
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    shm_size: "4g"
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

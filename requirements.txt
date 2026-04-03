@@ -1,0 +1,19 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.4.1+cu118
+torchvision==0.19.1+cu118
+timm>=0.9.12
+peft>=0.7.0
+transformers>=4.36.0
+accelerate
+optuna
+wandb
+adversarial-robustness-toolbox[pytorch]
+matplotlib
+seaborn
+numpy
+pandas
+scikit-learn
+Pillow
+tqdm
+huggingface_hub
+mdutils

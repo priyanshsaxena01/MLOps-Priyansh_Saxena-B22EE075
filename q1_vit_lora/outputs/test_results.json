@@ -1,0 +1,222 @@
+[
+  {
+    "lora": false,
+    "rank": null,
+    "alpha": null,
+    "dropout": 0.1,
+    "test_acc": 77.22,
+    "trainable_params": 38500,
+    "config": {
+      "experiment_id": 0,
+      "use_lora": false,
+      "rank": null,
+      "alpha": null,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 38500,
+      "total_params": 21704164
+    },
+    "experiment_name": "Exp0_NoLoRA_HeadOnly"
+  },
+  {
+    "lora": true,
+    "rank": 2,
+    "alpha": 2,
+    "dropout": 0.1,
+    "test_acc": 89.22,
+    "trainable_params": 75364,
+    "config": {
+      "experiment_id": 1,
+      "use_lora": true,
+      "rank": 2,
+      "alpha": 2,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 75364,
+      "total_params": 21779528
+    },
+    "experiment_name": "Exp1_LoRA_r2_a2_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 2,
+    "alpha": 4,
+    "dropout": 0.1,
+    "test_acc": 89.27,
+    "trainable_params": 75364,
+    "config": {
+      "experiment_id": 2,
+      "use_lora": true,
+      "rank": 2,
+      "alpha": 4,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 75364,
+      "total_params": 21779528
+    },
+    "experiment_name": "Exp2_LoRA_r2_a4_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 2,
+    "alpha": 8,
+    "dropout": 0.1,
+    "test_acc": 89.51,
+    "trainable_params": 75364,
+    "config": {
+      "experiment_id": 3,
+      "use_lora": true,
+      "rank": 2,
+      "alpha": 8,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 75364,
+      "total_params": 21779528
+    },
+    "experiment_name": "Exp3_LoRA_r2_a8_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 4,
+    "alpha": 2,
+    "dropout": 0.1,
+    "test_acc": 89.2,
+    "trainable_params": 112228,
+    "config": {
+      "experiment_id": 4,
+      "use_lora": true,
+      "rank": 4,
+      "alpha": 2,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 112228,
+      "total_params": 21816392
+    },
+    "experiment_name": "Exp4_LoRA_r4_a2_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 4,
+    "alpha": 4,
+    "dropout": 0.1,
+    "test_acc": 89.43,
+    "trainable_params": 112228,
+    "config": {
+      "experiment_id": 5,
+      "use_lora": true,
+      "rank": 4,
+      "alpha": 4,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 112228,
+      "total_params": 21816392
+    },
+    "experiment_name": "Exp5_LoRA_r4_a4_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 4,
+    "alpha": 8,
+    "dropout": 0.1,
+    "test_acc": 89.13,
+    "trainable_params": 112228,
+    "config": {
+      "experiment_id": 6,
+      "use_lora": true,
+      "rank": 4,
+      "alpha": 8,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 112228,
+      "total_params": 21816392
+    },
+    "experiment_name": "Exp6_LoRA_r4_a8_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 8,
+    "alpha": 2,
+    "dropout": 0.1,
+    "test_acc": 89.17,
+    "trainable_params": 185956,
+    "config": {
+      "experiment_id": 7,
+      "use_lora": true,
+      "rank": 8,
+      "alpha": 2,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 185956,
+      "total_params": 21890120
+    },
+    "experiment_name": "Exp7_LoRA_r8_a2_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 8,
+    "alpha": 4,
+    "dropout": 0.1,
+    "test_acc": 89.65,
+    "trainable_params": 185956,
+    "config": {
+      "experiment_id": 8,
+      "use_lora": true,
+      "rank": 8,
+      "alpha": 4,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 185956,
+      "total_params": 21890120
+    },
+    "experiment_name": "Exp8_LoRA_r8_a4_d0.1"
+  },
+  {
+    "lora": true,
+    "rank": 8,
+    "alpha": 8,
+    "dropout": 0.1,
+    "test_acc": 89.57,
+    "trainable_params": 185956,
+    "config": {
+      "experiment_id": 9,
+      "use_lora": true,
+      "rank": 8,
+      "alpha": 8,
+      "dropout": 0.1,
+      "epochs": 10,
+      "batch_size": 32,
+      "lr": 0.0001,
+      "weight_decay": 0.01,
+      "trainable_params": 185956,
+      "total_params": 21890120
+    },
+    "experiment_name": "Exp9_LoRA_r8_a8_d0.1"
+  }
+]
