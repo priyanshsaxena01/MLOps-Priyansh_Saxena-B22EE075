@@ -308,8 +308,8 @@ Assignment 5/
 │   ├── weights/                       # Model weights
 │   └── outputs/                       # Plots, results
 │
-└── report/                            # Assignment report
-    └── report.md                      # Report (converted to PDF)
+└── report                             # Assignment report
+
 ```
 
 ---
