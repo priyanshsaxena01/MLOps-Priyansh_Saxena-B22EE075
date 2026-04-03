@@ -146,35 +146,39 @@ python q1_vit_lora/train.py --use_lora --rank 4 --alpha 8 --dropout 0.1 --epochs
 
 ### Q1 Results
 
-#### Training-Validation Table (Example Format)
+#### Training-Validation Table (Example Format: Best Model Exp8_LoRA_r8_a4_d0.1)
 
 Each experiment produces a table like this:
 
 | Epoch | Training Loss | Validation Loss | Training Accuracy (%) | Validation Accuracy (%) |
 |-------|---------------|-----------------|----------------------|------------------------|
-| 1     | --            | --              | --                   | --                     |
-| 2     | --            | --              | --                   | --                     |
-| ...   | ...           | ...             | ...                  | ...                    |
-| 10    | --            | --              | --                   | --                     |
-
-> **Note**: Actual values will be populated after training. See WandB for live results.
+| 1     | 1.4623        | 0.5643          | 67.97                | 84.38                  |
+| 2     | 0.4394        | 0.4461          | 86.91                | 86.62                  |
+| 3     | 0.3610        | 0.4015          | 88.97                | 87.84                  |
+| 4     | 0.3178        | 0.3766          | 90.12                | 88.28                  |
+| 5     | 0.2864        | 0.3709          | 91.02                | 88.36                  |
+| 6     | 0.2672        | 0.3603          | 91.63                | 88.70                  |
+| 7     | 0.2576        | 0.3561          | 91.85                | 88.96                  |
+| 8     | 0.2446        | 0.3535          | 92.31                | 89.16                  |
+| 9     | 0.2368        | 0.3532          | 92.56                | 89.12                  |
+| 10    | 0.2346        | 0.3518          | 92.58                | 89.18                  |
 
 #### Test Results Summary
 
 | LoRA | Rank | Alpha | Dropout | Test Accuracy (%) | Trainable Parameters |
 |------|------|-------|---------|-------------------|---------------------|
-| Without | - | - | - | -- | -- |
-| With | 2 | 2 | 0.1 | -- | -- |
-| With | 2 | 4 | 0.1 | -- | -- |
-| With | 2 | 8 | 0.1 | -- | -- |
-| With | 4 | 2 | 0.1 | -- | -- |
-| With | 4 | 4 | 0.1 | -- | -- |
-| With | 4 | 8 | 0.1 | -- | -- |
-| With | 8 | 2 | 0.1 | -- | -- |
-| With | 8 | 4 | 0.1 | -- | -- |
-| With | 8 | 8 | 0.1 | -- | -- |
+| Without | - | - | 0.1 | 77.22 | 38,500 |
+| With | 2 | 2 | 0.1 | 89.22 | 75,364 |
+| With | 2 | 4 | 0.1 | 89.27 | 75,364 |
+| With | 2 | 8 | 0.1 | 89.51 | 75,364 |
+| With | 4 | 2 | 0.1 | 89.20 | 112,228 |
+| With | 4 | 4 | 0.1 | 89.43 | 112,228 |
+| With | 4 | 8 | 0.1 | 89.13 | 112,228 |
+| With | 8 | 2 | 0.1 | 89.17 | 185,956 |
+| With | 8 | 4 | 0.1 | 89.65 | 185,956 |
+| With | 8 | 8 | 0.1 | 89.57 | 185,956 |
 
-> **Note**: Replace `--` with actual results after training. Full results available on [WandB](https://wandb.ai/priyansh-saxena/Assignment-5).
+> **Note**: Full results available on [WandB](https://wandb.ai/priyansh-saxena/Assignment-5). Best single experiment test accuracy: **89.65%** (Rank 8, Alpha 4).
 
 #### Training Curves
 
@@ -190,7 +194,7 @@ Each experiment produces a table like this:
 
 #### Optuna Best Configuration
 
-Best LoRA hyperparameters found by Optuna will be logged here after the search completes.
+**Best LoRA Configuration found:** Rank (`r`) = 4, Alpha (`a`) = 8, yielding an Optuna Best Test Accuracy of **89.51%**. Model pushed to HuggingFace hub as `Optuna_Best_r4_a8`.
 
 ---
 
@@ -220,15 +224,13 @@ python q2_adversarial/compare_fgsm.py --model_path ./q2_adversarial/weights/resn
 
 | Epsilon | Clean Acc (%) | FGSM Scratch (%) | FGSM ART (%) | Drop (Scratch) | Drop (ART) |
 |---------|---------------|-------------------|---------------|----------------|------------|
-| 0.000   | --            | --                | --            | --             | --         |
-| 0.010   | --            | --                | --            | --             | --         |
-| 0.030   | --            | --                | --            | --             | --         |
-| 0.050   | --            | --                | --            | --             | --         |
-| 0.100   | --            | --                | --            | --             | --         |
-| 0.200   | --            | --                | --            | --             | --         |
-| 0.300   | --            | --                | --            | --             | --         |
-
-> **Note**: Replace `--` with actual results after running experiments.
+| 0.000   | 99.37         | 99.37             | 99.37         | 0.00           | 0.00       |
+| 0.010   | 99.37         | 35.58             | 38.83         | 63.79          | 60.54      |
+| 0.030   | 99.37         | 23.27             | 25.05         | 76.10          | 74.32      |
+| 0.050   | 99.37         | 18.28             | 19.78         | 81.09          | 79.59      |
+| 0.100   | 99.37         | 12.29             | 12.53         | 87.08          | 86.84      |
+| 0.200   | 99.37         | 10.04             | 10.36         | 89.33          | 89.01      |
+| 0.300   | 99.37         | 10.00             | 10.32         | 89.37          | 89.05      |
 
 #### Visual Comparison
 
@@ -258,12 +260,12 @@ python q2_adversarial/wandb_samples.py --resnet18_path ./q2_adversarial/weights/
 
 | Detector | Attack | Detection Accuracy (%) |
 |----------|--------|------------------------|
-| PGD-trained (ResNet-34) | PGD | -- |
-| PGD-trained (ResNet-34) | BIM | -- |
-| BIM-trained (ResNet-34) | BIM | -- |
-| BIM-trained (ResNet-34) | PGD | -- |
+| PGD-trained (ResNet-34) | PGD | 99.95 |
+| PGD-trained (ResNet-34) | BIM | 99.28 |
+| BIM-trained (ResNet-34) | BIM | 99.95 |
+| BIM-trained (ResNet-34) | PGD | 99.97 |
 
-> **Target**: ≥ 70% detection accuracy for each case.
+> **Target Result**: Achieved near-perfect detection accuracy (~99%), well above the ≥ 70% requirement for each target case!
 
 #### Adversarial Samples on WandB
 
@@ -355,4 +357,4 @@ The detailed report with all analysis, tables, graphs, and observations is avail
 
 ---
 
-*© 2026 Priyansh Saxena (B22EE075) — MLOps Assignment 5*
+*© 2026 Priyansh Saxena (B22EE075) — ML-Dl-Ops Assignment 5*
