@@ -341,11 +341,6 @@ python q2_adversarial/evaluate_detector.py
 python q2_adversarial/wandb_samples.py
 ```
 
----
-
-## 📝 Report
-
-The detailed report with all analysis, tables, graphs, and observations is available in `report/report.pdf`.
 
 ---
 
