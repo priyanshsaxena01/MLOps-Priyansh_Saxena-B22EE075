@@ -1,6 +1,6 @@
 # Assignment 5: ViT LoRA Fine-Tuning & Adversarial Attacks
 
-**Course**: MLOps  
+**Course**: ML-Dl-Ops  
 **Student**: Priyansh Saxena (B22EE075)  
 **Branch**: Assignment-5
 
@@ -23,7 +23,7 @@
 | Resource | Link |
 |----------|------|
 | **WandB Project** | [https://wandb.ai/priyansh-saxena/Assignment-5](https://wandb.ai/priyansh-saxena/Assignment-5) |
-| **HuggingFace Model** | [https://huggingface.co/b22ee075](https://huggingface.co/b22ee075) |
+| **HuggingFace Model** | [https://huggingface.co/b22ee075/vit-s-lora-cifar100](https://huggingface.co/b22ee075/vit-s-lora-cifar100) |
 | **GitHub Repository** | [https://github.com/priyanshsaxena01/MLOps-Priyansh_Saxena-B22EE075/tree/Assignment-5](https://github.com/priyanshsaxena01/MLOps-Priyansh_Saxena-B22EE075/tree/Assignment-5) |
 
 ---
